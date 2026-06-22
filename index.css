@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #1e293b;
+    --bg-elevated: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-primary: #3b82f6;
+    --accent-secondary: #8b5cf6;
+    --success: #22c55e;
+    --error: #ef4444;
+    --warning: #f59e0b;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-slate-800/60 backdrop-blur-md border border-slate-700/50 rounded-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold rounded-xl
+           hover:from-blue-600 hover:to-violet-600 active:scale-[0.97] transition-all duration-200
+           shadow-lg shadow-blue-500/20;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-slate-700/80 text-slate-100 font-semibold rounded-xl
+           hover:bg-slate-600 active:scale-[0.97] transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-slate-800/80 border border-slate-600/50 rounded-xl
+           text-slate-100 placeholder-slate-500
+           focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50
+           transition-all duration-200;
+  }
+
+  .option-btn {
+    @apply w-full px-5 py-4 text-left rounded-xl border border-slate-600/50
+           bg-slate-800/60 text-slate-200
+           hover:bg-slate-700/80 hover:border-slate-500/50
+           active:scale-[0.98] transition-all duration-150;
+  }
+
+  .option-btn.correct {
+    @apply bg-emerald-500/20 border-emerald-500/60 text-emerald-300;
+  }
+
+  .option-btn.incorrect {
+    @apply bg-red-500/20 border-red-500/60 text-red-300;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
